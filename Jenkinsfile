@@ -1,15 +1,15 @@
 pipeline {
     agent any
 
-    stages {
-        stage('Checkout') {
-            steps {
-                checkout scm
-            }
-        }
+    tools {
+        nodejs 'NodeJS-22'
+    }
 
+    stages {
         stage('Install') {
             steps {
+                sh 'node -v'
+                sh 'npm -v'
                 sh 'npm install'
             }
         }
@@ -20,8 +20,9 @@ pipeline {
             }
         }
 
-        stage('Deploy to Vercel') {
+        stage('Deploy') {
             steps {
+                sh 'vercel --version'
                 sh 'npx vercel deploy --prod --yes'
             }
         }
