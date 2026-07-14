@@ -188,6 +188,7 @@ export default function HomeFeed() {
           <div className="pt-3 border-t border-zinc-50 dark:border-zinc-850 space-y-4 animate-in fade-in duration-200">
             {/* Distance Slider */}
             <div>
+              
               <div className="flex justify-between items-center text-[10px] font-bold text-zinc-400 dark:text-zinc-500 uppercase tracking-wider mb-2">
                 <span>Distance Range</span>
                 <span className="text-rose-500">{distanceLimit} km</span>
